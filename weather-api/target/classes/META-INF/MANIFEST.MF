@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: weather-api
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Nilesh
+Implementation-Vendor-Id: com.example.weather
+Build-Jdk: 1.8.0_121
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/weather
+Created-By: Maven Integration for Eclipse
+

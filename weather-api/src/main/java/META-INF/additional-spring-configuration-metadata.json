@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "darkskyKey",
+    "type": "java.lang.String",
+    "description": "A description for 'darkskyKey'"
+  },
+  {
+    "name": "opencageKey",
+    "type": "java.lang.String",
+    "description": "A description for 'opencageKey'"
+  }
+]}

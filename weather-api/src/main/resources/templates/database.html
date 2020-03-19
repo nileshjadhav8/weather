@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Database</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+<link
+	href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400italic,700,700italic'
+	rel='stylesheet' type='text/css'>
+
+
+
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+
+<style>
+body {
+	background-image: url("images/mongo-db-logo.png");
+	background-size: 450px;
+	background-repeat: repeat;
+}
+
+h1 {
+	color: black;
+	font-family: 'Cormorant Garamond';
+	border-bottom: 3px solid #e66c7e;
+	font-size: 68px;
+	font-weight: 400;
+	line-height: 72px;
+	letter-spacing: 35px;
+	margin-bottom: 57px;
+	text-align: center;
+	text-indent: 24px;
+	text-transform: uppercase;
+}
+
+#customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+	background-color: #ddd;
+}
+
+#customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+
+
+
+</head>
+<body>
+	<h1>MongoDb Page</h1>
+
+
+	<table id="customers">
+		<tr>
+			<th>COUNTRY</th>
+			<th>CITY</th>
+			<th>LATITUDE</th>
+			<th>LONGITUDE</th>
+			<th>DESCRIPTION</th>
+			<th>ICON</th>
+			<th>TEMP</th>
+			<th>DEW POINT</th>
+			<th>PRESSURE</th>
+			<th>HUMIDITY</th>
+			<th>WIND GUST</th>
+			<th>CLOUD COVER</th>
+			<th>VISIBILITY</th>
+			<th>WIND SPEED</th>
+		</tr>
+
+		<tr th:each="weather : ${databaseWeathers}">
+
+
+			<td th:text="${weather.place?.country}"></td>
+			<td th:text="${weather.place?.city}"></td>
+			<td th:text="${weather.coordinates?.lat}"></td>
+			<td th:text="${weather.coordinates?.longitude}"></td>
+			<td th:text="${weather.weather?.description}"></td>
+			<td th:text="${weather.weather?.icon}"></td>
+			<td th:text="${weather.mainInfo?.temp}"></td>
+			<td th:text="${weather.weather?.dewPoint}"></td>
+			<td th:text="${weather.mainInfo?.pressure}"></td>
+			<td th:text="${weather.mainInfo?.humidity}"></td>
+			<td th:text="${weather.mainInfo?.windGust}"></td>
+			<td th:text="${weather.mainInfo?.cloudCover}"></td>
+			<td th:text="${weather?.visibility}"></td>
+			<td th:text="${weather.wind?.speed}"></td>
+		</tr>
+
+
+
+	</table>
+
+
+	<div id=home>
+		<a href="http://localhost:8080" class="btn btn-large btn-info">Go
+			to Home</a>
+	</div>
+
+
+</body>
+</html>
